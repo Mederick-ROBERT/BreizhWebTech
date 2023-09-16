@@ -7,26 +7,27 @@ gsap.registerPlugin(ScrollTrigger);
 </script>
 
 <template>
-    <section class="home--first-part">
-        <div class="home--first-part-text">
-            <div class="home--first-part-text-container">
-                <h2 class="home--first-part-text-container-title">What technologies are we <span class="first-part-color">using ?</span></h2>
-                <p class="home--first-part-text-container-presentation">For web development, we employ a set of powerful technologies. 
-                    <span class="first-part-color">On the Front-end, we utilize frameworks such as Vue.js, React, and Nuxt.js,</span> which streamline the creation of dynamic and responsive user interfaces using JavaScript as the foundational language. 
-                    These frameworks enable us to design modern and user-friendly web applications.
+    <section class="home--second-part">
+        <div class="home--second-part-text">
+            <div class="home--second-part-text-container">
+                <h2 class="home--second-part-text-container-title">Security : <span class="second-part-color">Of Utmost Importance.</span></h2>
+                <p class="home--second-part-text-container-presentation">At our company, the security of our websites is our top priority.
+                    We are committed to ensuring maximum protection against a wide range of online threats. 
+                    To achieve this, we have implemented robust measures against <span class="second-part-color">XSS (Cross-Site Scripting) attacks, CSRF (Cross-Site Request Forgery), brute force attacks, and many others.</span>
                 </p>
 
-                <p class="home--first-part-text-container-presentation"><span class="first-part-color">On the server side, we rely on Laravel,</span> a robust PHP framework, for building robust and scalable web applications. 
-                    PHP serves as the primary programming language for back-end development,<span class="first-part-color"> and we store data in a MySQL database,</span> providing efficient and secure data management.
+                <p class="home--second-part-text-container-presentation">We employ <span class="second-part-color">secure coding techniques, advanced firewalls, and regularly update our systems to prevent known vulnerabilities.</span> 
+                    Furthermore, we conduct routine penetration tests to identify and rectify any potential weaknesses.
                 </p>
-                <p class="home--first-part-text-container-presentation">By combining these front-end and back-end technologies, we can create interactive and high-performance websites that meet the needs of our clients and end users.
+                <p class="home--second-part-text-container-presentation">We constantly vigilantly ensure that our sites remain shielded from online threats so that our users can browse with confidence. 
+                    <span class="second-part-color">The security of your data and personal information is our commitment,</span> and we spare no effort to maintain it at an optimal level.
                 </p>
-                <NuxtLink to="/products" class="home--first-part-text-container-button">See Our Products <Icon name="uil:arrow-right" /></NuxtLink>
+                <NuxtLink to="/products" class="home--second-part-text-container-button">See Our Products <Icon name="uil:arrow-right" /></NuxtLink>
             </div>
         </div>
-        <div class="home--first-part-picture">
-            <div class="home--first-part-picture-container">
-                <img src="~/assets/techno.png" alt="techno" loading="lazy">
+        <div class="home--second-part-picture">
+            <div class="home--second-part-picture-container">
+                <img src="~/assets/security.jpg" alt="security" loading="lazy">
             </div>
         </div>
     </section>
@@ -35,24 +36,24 @@ gsap.registerPlugin(ScrollTrigger);
 <script>
 export default {
     mounted() {
-        const firstPart_text = document.querySelector('.home--first-part-text');
-        const firstPart_picture = document.querySelector('.home--first-part-picture');
+        const secondPart_text = document.querySelector('.home--second-part-text');
+        const secondPart_picture = document.querySelector('.home--second-part-picture');
 
-        gsap.to(firstPart_text, {
+        gsap.to(secondPart_text, {
             scrollTrigger: {
-                trigger: firstPart_text,
+                trigger: secondPart_text,
                 start: 'top 80%',
                 end: 'bottom 20%',
                 // scrub: true,
                 markers: false,
             },
-            x: -180,
+            x: 180,
             duration: 1.5,
         })
 
-        gsap.to(firstPart_picture, {
+        gsap.to(secondPart_picture, {
             scrollTrigger: {
-                trigger: firstPart_text,
+                trigger: secondPart_text,
                 start: 'top 80%',
                 end: 'bottom 20%',
                 // scrub: true,
@@ -63,22 +64,22 @@ export default {
         })
     }
 }
-
 </script>
 
 <style lang="scss">
+
 @use "~/Style/variable.scss" as v;
     
-.home--first-part {
+.home--second-part {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     gap: 2rem;
     min-height: 90vh;
 
     &-text {
         flex: 1;
         position: relative;
-        right: -150px;
+        right: 150px;
 
         &-container {
             display: flex;
@@ -92,7 +93,7 @@ export default {
                 font-size: 1.9rem;
             }
 
-            & .first-part-color {
+            & .second-part-color {
                 color: v.$primary--color;
             }
 
@@ -128,15 +129,15 @@ export default {
 
         &-container {
             display: flex;
-            justify-content: start;
+            justify-content: center;
             align-items: center;
-            padding-left: 5vw;
             height: 100%;
-            max-height: 480px;
+            max-height: 500px;
             width: 100%;
+            max-width: 500px;
 
             img {
-                width: fit-content;
+                width: 100%;
                 height: fit-content;
                 border-radius: 0.5rem;
                 object-fit: contain;
@@ -147,5 +148,5 @@ export default {
         }
     }
 }
-
+    
 </style>
