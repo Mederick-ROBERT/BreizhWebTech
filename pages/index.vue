@@ -1,7 +1,7 @@
 <script setup>
 import Typewriter from 'typewriter-effect/dist/core';
 
-import { ref, onMounted } from 'vue';
+import HomeCorps from '~/components/Body/Content/Home/HomeCorps.vue';
 
 </script>
 
@@ -13,9 +13,6 @@ import { ref, onMounted } from 'vue';
                 <div class="typewritter--text">
                     <div class="typewritter--text-contain">
                        <p>Order or improve your site in <span class="typewritter--container"><!-- Techno en typeWritter --></span></p>
-                        <!-- <div class="typewritter--container">
-                            
-                        </div>  -->
                     </div>
                     
                     <div class="other--text">
@@ -36,7 +33,7 @@ import { ref, onMounted } from 'vue';
         </div>
 
         <div class="home--content-corps">
-            
+            <HomeCorps />
         </div>
     </div>  
 </template>
@@ -119,6 +116,12 @@ export default {
                         padding: 0.5rem 1rem;
                         border-radius: 0.3rem;
                         width: fit-content;
+
+                        &:hover {
+                            transition: background-color 0.5s;
+                            background-color: v.$primary--color-bis;
+                            box-shadow: 7px 14px 15px -3px rgba(0, 0, 0, 0.5);
+                        }
                     }
                 }
             }
