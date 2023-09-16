@@ -7,14 +7,15 @@ import { ref, onMounted } from 'vue';
 
 <template>
     <div class="home--content">
+
         <div class="home--content-presentation">
             <div class="home--content-presentation-text">
                 <div class="typewritter--text">
                     <div class="typewritter--text-contain">
-                       <p>Order or improve your site in</p>
-                        <div class="typewritter--container">
-                            <!-- Techno en typeWritter -->
-                        </div> 
+                       <p>Order or improve your site in <span class="typewritter--container"><!-- Techno en typeWritter --></span></p>
+                        <!-- <div class="typewritter--container">
+                            
+                        </div>  -->
                     </div>
                     
                     <div class="other--text">
@@ -33,7 +34,11 @@ import { ref, onMounted } from 'vue';
                 </div>
             </div>
         </div>
-    </div>    
+
+        <div class="home--content-corps">
+            
+        </div>
+    </div>  
 </template>
 
 <script>
@@ -49,7 +54,7 @@ export default {
     cursor: '_',
     wrapperClassName: 'typewritter--wrapper'
 
-}) 
+    })     
   }
 }
 </script>
@@ -141,6 +146,10 @@ export default {
                     }
                 }
             }
+    }
+
+    &-corps {
+        margin-top: 5rem;
     }
 }
 
