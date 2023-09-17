@@ -9,12 +9,11 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
     }
   },
-  modules: ['@pinia/nuxt', 'nuxt-icon'],
-  // pinia: {
-  //   autoImports: [
-  //     // automatically imports `defineStore`
-  //     'defineStore', // import { defineStore } from 'pinia'
-  //     ['defineStore', 'definePiniaStore'], // import { defineStore as definePiniaStore } from 'pinia'
-  //   ],
-  // },
+  modules: [
+    '@pinia/nuxt',
+    'nuxt-icon',
+  ],
+
+
+  
 })

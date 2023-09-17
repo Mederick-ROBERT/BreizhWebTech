@@ -2,7 +2,15 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+import { index } from '~/Text/index'
+
 gsap.registerPlugin(ScrollTrigger);
+
+const props = defineProps({
+    language: String,
+})
+
+const data = index();
 
 </script>
 
@@ -10,18 +18,15 @@ gsap.registerPlugin(ScrollTrigger);
     <section class="home--first-part">
         <div class="home--first-part-text">
             <div class="home--first-part-text-container">
-                <h2 class="home--first-part-text-container-title">What technologies are we <span class="first-part-color">using ?</span></h2>
-                <p class="home--first-part-text-container-presentation">For web development, we employ a set of powerful technologies. 
-                    <span class="first-part-color">On the Front-end, we utilize frameworks such as Vue.js, React, and Nuxt.js,</span> which streamline the creation of dynamic and responsive user interfaces using JavaScript as the foundational language. 
-                    These frameworks enable us to design modern and user-friendly web applications.
+                <h2 class="home--first-part-text-container-title" v-html="props.language === 'fr' ? data.fr.firstPart.title : data.en.firstPart.title"></h2> 
+                <p class="home--first-part-text-container-presentation" v-html="props.language === 'fr' ? data.fr.firstPart.first : data.en.firstPart.first">
                 </p>
 
-                <p class="home--first-part-text-container-presentation"><span class="first-part-color">On the server side, we rely on Laravel,</span> a robust PHP framework, for building robust and scalable web applications. 
-                    PHP serves as the primary programming language for back-end development,<span class="first-part-color"> and we store data in a MySQL database,</span> providing efficient and secure data management.
+                <p class="home--first-part-text-container-presentation" v-html="props.language === 'fr' ? data.fr.firstPart.second : data.en.firstPart.second">
                 </p>
-                <p class="home--first-part-text-container-presentation">By combining these front-end and back-end technologies, we can create interactive and high-performance websites that meet the needs of our clients and end users.
+                <p class="home--first-part-text-container-presentation" v-html="props.language === 'fr' ? data.fr.firstPart.third : data.en.firstPart.third">
                 </p>
-                <NuxtLink to="/products" class="home--first-part-text-container-button">See Our Products <Icon name="uil:arrow-right" /></NuxtLink>
+                <NuxtLink to="/products" class="home--first-part-text-container-button">{{ props.language === 'fr' ? 'Nos Produits' : 'See Our Products' }} <Icon name="uil:arrow-right" /></NuxtLink>
             </div>
         </div>
         <div class="home--first-part-picture">

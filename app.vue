@@ -1,12 +1,14 @@
 <script setup>
 useHead({
   title: 'BreizhWebTech',
+  lang: 'fr',
   meta: [
     { name: 'description', content: 'My amazing site.' }
   ],
 })
 
 import Header from '~/components/Header/Header.vue'
+import Footer from '~/components/Footer/Footer.vue'
 
 </script>
 
@@ -16,6 +18,7 @@ import Header from '~/components/Header/Header.vue'
     <div class="app--container">
       <NuxtPage />
     </div>
+    <Footer />
   </div>
 </template>
 
@@ -49,7 +52,7 @@ import Header from '~/components/Header/Header.vue'
 
 body {
     background: rgb(45,4,88);
-  background: linear-gradient(110deg, rgb(18, 2, 34) 18%, rgb(34, 1, 71) 100%);
+    background: linear-gradient(110deg, rgb(18, 2, 34) 18%, rgb(34, 1, 71) 100%);
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 400;

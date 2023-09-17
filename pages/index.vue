@@ -2,24 +2,32 @@
 import Typewriter from 'typewriter-effect/dist/core';
 
 import HomeCorps from '~/components/Body/Content/Home/HomeCorps.vue';
+// import { ref, computed } from 'vue';
+
+import { index } from '~/Text/index'
+
+import { useLanguageStore } from '~/store/language';
+import { storeToRefs } from 'pinia'
+
+const store = useLanguageStore();
+const { language } = storeToRefs(store)    // permet de récupérer la valeur de la variable language dans le store dynamiquement
+
+const data = index();
 
 </script>
 
 <template>
     <div class="home--content">
-
         <div class="home--content-presentation">
             <div class="home--content-presentation-text">
                 <div class="typewritter--text">
                     <div class="typewritter--text-contain">
-                       <p>Order or improve your site in <span class="typewritter--container"><!-- Techno en typeWritter --></span></p>
+                        <p> {{ language === 'fr' ? data.fr.title : data.en.title }} <span class="typewritter--container"><!-- Techno en typeWritter --></span></p>
                     </div>
                     
                     <div class="other--text">
-                        <p>Here you'll find everything you need to order a showcase site,
-                            a complete site with Back-Office and Front-Office, 
-                            or upgrade contracts for your own website ...</p>
-                        <NuxtLink class="other--text-button" to="/products">Get Started <Icon name="uil:arrow-right" /> </NuxtLink>
+                        <p>{{ language === 'fr' ? data.fr.presentation : data.en.presentation }}</p>
+                        <NuxtLink class="other--text-button" to="/products">{{ language === 'fr' ? 'Commencer' : 'Get Started' }} <Icon name="uil:arrow-right" /> </NuxtLink>
                     </div>
                     
                 </div>
@@ -39,7 +47,7 @@ import HomeCorps from '~/components/Body/Content/Home/HomeCorps.vue';
 </template>
 
 <script>
-export default {
+export default defineComponent ({
   mounted() {
     new Typewriter('.typewritter--container', {
     strings: ['Laravel', 'Vue.js', 'React', 'Php', 'MySQL', 'Nuxt.js'],
@@ -51,9 +59,9 @@ export default {
     cursor: '_',
     wrapperClassName: 'typewritter--wrapper'
 
-    })     
+    }) 
   }
-}
+})
 </script>
 
 <style lang="scss"> 
@@ -134,14 +142,15 @@ export default {
 
                 &-container {
                     width: 100%;
-                    height: 100%;
+                    max-width: 550px;
+                    height: fit-content;
                     max-height: 450px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     
                     & img {
-                        width: fit-content;
+                        width: 100%;
                         height: 100%;
                         object-fit: contain;
                         border-radius: 0.5rem;

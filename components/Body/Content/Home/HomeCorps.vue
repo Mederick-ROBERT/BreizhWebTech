@@ -3,12 +3,18 @@ import FirstPart from '~/components/Body/Content/Home/Part/FirstPart.vue';
 import SecondPart from '~/components/Body/Content/Home/Part/SecondPart.vue';
 import ThirdPart from '~/components/Body/Content/Home/Part/ThirdPart.vue';
 
+import { useLanguageStore } from '~/store/language';
+import { storeToRefs } from 'pinia'
+
+const store = useLanguageStore();
+const { language } = storeToRefs(store) 
+
 </script>
 
 <template>
     <div class="home--corps">
         <div class="home--corps-firstPart">
-            <FirstPart />
+            <FirstPart :language="language" />
         </div> 
         
         <div class="home--corps-secondPart">
@@ -18,7 +24,6 @@ import ThirdPart from '~/components/Body/Content/Home/Part/ThirdPart.vue';
         <div class="home--corps-thirdPart">
             <ThirdPart />
         </div>
-        
     </div>
 </template>
 
