@@ -2,7 +2,15 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+import { index } from '~/Text/index'
+
 gsap.registerPlugin(ScrollTrigger);
+
+const props = defineProps({
+    language: String,
+})
+
+const data = index();
 
 </script>
 
@@ -10,19 +18,15 @@ gsap.registerPlugin(ScrollTrigger);
     <section class="home--second-part">
         <div class="home--second-part-text">
             <div class="home--second-part-text-container">
-                <h2 class="home--second-part-text-container-title">Security : <span class="second-part-color">Of Utmost Importance.</span></h2>
-                <p class="home--second-part-text-container-presentation">At our company, the security of our websites is our top priority.
-                    We are committed to ensuring maximum protection against a wide range of online threats. 
-                    To achieve this, we have implemented robust measures against <span class="second-part-color">XSS (Cross-Site Scripting) attacks, CSRF (Cross-Site Request Forgery), brute force attacks, and many others.</span>
+                <h2 class="home--second-part-text-container-title" v-html="props.language === 'fr' ? data.fr.secondPart.title : data.en.secondPart.title"></h2>
+                <p class="home--second-part-text-container-presentation" v-html="props.language === 'fr' ? data.fr.secondPart.first : data.en.secondPart.first">
                 </p>
 
-                <p class="home--second-part-text-container-presentation">We employ <span class="second-part-color">secure coding techniques, advanced firewalls, and regularly update our systems to prevent known vulnerabilities.</span> 
-                    Furthermore, we conduct routine penetration tests to identify and rectify any potential weaknesses.
+                <p class="home--second-part-text-container-presentation" v-html="props.language === 'fr' ? data.fr.secondPart.second : data.en.secondPart.second">
                 </p>
-                <p class="home--second-part-text-container-presentation">We constantly vigilantly ensure that our sites remain shielded from online threats so that our users can browse with confidence. 
-                    <span class="second-part-color">The security of your data and personal information is our commitment,</span> and we spare no effort to maintain it at an optimal level.
+                <p class="home--second-part-text-container-presentation" v-html="props.language === 'fr' ? data.fr.secondPart.third : data.en.secondPart.third">
                 </p>
-                <NuxtLink to="/products" class="home--second-part-text-container-button">See Our Products <Icon name="uil:arrow-right" /></NuxtLink>
+                <NuxtLink to="/products" class="home--second-part-text-container-button">{{ props.language === 'fr' ? 'Nos Produits' : 'See Our Products' }} <Icon name="uil:arrow-right" /></NuxtLink>
             </div>
         </div>
         <div class="home--second-part-picture">

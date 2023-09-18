@@ -2,7 +2,15 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+import { index } from '~/Text/index'
+
 gsap.registerPlugin(ScrollTrigger);
+
+const props = defineProps({
+    language: String,
+})
+
+const data = index();
 
 </script>
 
@@ -10,19 +18,15 @@ gsap.registerPlugin(ScrollTrigger);
     <section class="home--third-part">
         <div class="home--third-part-text">
             <div class="home--third-part-text-container">
-                <h2 class="home--third-part-text-container-title">SEO for <span class="third-part-color">search engine optimization.</span></h2>
-                <p class="home--third-part-text-container-presentation">At our company, <span class="third-part-color">Search Engine Optimization (SEO)</span> is at the core of our online strategy. 
-                    We implement advanced practices to maximize our visibility on search engines. 
-                    Our goal is to ensure that <span class="third-part-color">our products and services are easily found by potential customers.</span>
+                <h2 class="home--third-part-text-container-title" v-html="props.language === 'fr' ? data.fr.thirdPart.title : data.en.thirdPart.title"></h2>
+                <p class="home--third-part-text-container-presentation" v-html="props.language === 'fr' ? data.fr.thirdPart.first : data.en.thirdPart.first">
                 </p>
 
-                <p class="home--third-part-text-container-presentation">We conduct thorough keyword research, optimize the content of our web pages, and establish a search engine-friendly site structure. 
-                    We are constantly on <span class="third-part-color">the lookout for the latest SEO trends</span> to ensure that our online presence remains at the forefront.
+                <p class="home--third-part-text-container-presentation" v-html="props.language === 'fr' ? data.fr.thirdPart.second : data.en.thirdPart.second">
                 </p>
-                <p class="home--third-part-text-container-presentation">Thanks to our ongoing SEO efforts, we continuously improve our ranking on Google, resulting in better visibility and more visitors to our website. 
-                    This allows us to better serve <span class="third-part-color">our customers and strengthen our online presence.</span>
+                <p class="home--third-part-text-container-presentation" v-html="props.language === 'fr' ? data.fr.thirdPart.third : data.en.thirdPart.third">
                 </p>
-                <NuxtLink to="/products" class="home--third-part-text-container-button">See Our Products <Icon name="uil:arrow-right" /></NuxtLink>
+                <NuxtLink to="/products" class="home--third-part-text-container-button">{{ props.language === 'fr' ? 'Nos Produits' : 'See Our Products' }} <Icon name="uil:arrow-right" /></NuxtLink>
             </div>
         </div>
         <div class="home--third-part-picture">

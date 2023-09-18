@@ -3,8 +3,15 @@ useHead({
   title: 'BreizhWebTech',
   lang: 'fr',
   meta: [
-    { name: 'description', content: 'My amazing site.' }
+    { name: 'description', content: 'Site Officiel de BreizhWebTech. Venez commander votre site, l\'améliorer ou le remettre au gout du jour.' }
   ],
+})
+
+useSeoMeta({
+  title: 'BreizhWebTech',
+  ogTitle: 'BreizhWebTech',
+  description: 'Site Officiel de BreizhWebTech. Venez commander votre site, l\'améliorer ou le remettre au gout du jour.',
+  ogDescription: 'Site Officiel de BreizhWebTech. Venez commander votre site, l\'améliorer ou le remettre au gout du jour.',
 })
 
 import Header from '~/components/Header/Header.vue'
@@ -68,5 +75,7 @@ body {
 .app--container {
     margin: 1rem 3rem;
 }
+
+
 
 </style>

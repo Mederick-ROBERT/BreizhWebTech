@@ -90,6 +90,7 @@ export default defineComponent ({
                     align-items: baseline;
                     gap: 0.5rem;
                     font-variant: small-caps;
+                    min-width: 720px;
 
                     & p {
                         font-size: 1.8rem;

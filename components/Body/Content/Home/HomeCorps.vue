@@ -18,11 +18,11 @@ const { language } = storeToRefs(store)
         </div> 
         
         <div class="home--corps-secondPart">
-            <SecondPart />
+            <SecondPart :language="language" />
         </div>
 
         <div class="home--corps-thirdPart">
-            <ThirdPart />
+            <ThirdPart :language="language" />
         </div>
     </div>
 </template>

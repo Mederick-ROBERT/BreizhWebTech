@@ -12,8 +12,11 @@ export default defineNuxtConfig({
   modules: [
     '@pinia/nuxt',
     'nuxt-icon',
+    '@vite-pwa/nuxt',
   ],
-
+  pwa: {
+    /* PWA options */
+  }
 
   
 })

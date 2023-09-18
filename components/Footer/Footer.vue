@@ -35,7 +35,7 @@ import LogosLinkedinIcon from '~/components/Footer/SocialNetwork/LogosLinkedinIc
                 <div class="footer--container-right-side-single-container">
                     <h3>Our Products</h3>
                     <div class="footer--container-right-side-single-container-link">
-                        <NuxtLink to="/products">our services</NuxtLink>
+                        <NuxtLink to="/products">Our services</NuxtLink>
                         <NuxtLink to="/products">Type of products</NuxtLink>
                     </div>
                 </div>
