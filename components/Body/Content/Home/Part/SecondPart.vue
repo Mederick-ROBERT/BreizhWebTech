@@ -51,7 +51,7 @@ export default {
                 // scrub: true,
                 markers: false,
             },
-            x: 180,
+            x: 150,
             duration: 1.5,
         })
 
@@ -80,6 +80,11 @@ export default {
     gap: 2rem;
     min-height: 90vh;
 
+    @media(max-width : 1000px) {
+        flex-direction: column;
+        gap: 4rem;
+    }
+
     &-text {
         flex: 1;
         position: relative;
@@ -90,7 +95,12 @@ export default {
             flex-direction: column;
             gap: 1rem;
             justify-content: center;
+            padding-left: 3vw;
             height: 100%;
+
+            @media(max-width : 1000px) {
+                padding: 0;
+            }
 
             &-title {
                 font-variant: small-caps;
@@ -131,6 +141,10 @@ export default {
         position: relative;
         bottom: -150px;
 
+        @media(max-width : 1000px) {
+             justify-content: end;   
+        }
+
         &-container {
             display: flex;
             justify-content: center;
@@ -139,6 +153,11 @@ export default {
             max-height: 500px;
             width: 100%;
             max-width: 500px;
+
+            @media(max-width : 1000px) {
+                max-height: 325px;
+                max-width: 325px;
+            }
 
             img {
                 width: 100%;

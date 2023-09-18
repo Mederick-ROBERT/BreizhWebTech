@@ -68,8 +68,13 @@ export default {
     margin: 1rem 3rem;
     display: flex;
     flex-direction: row;
-    border-top: v.$border--bottom;
+    border-top: 0.2px solid rgba(128, 128, 128, 0.5);
     padding: 1.5rem;
+
+    @media (max-width: 500px) {
+        flex-direction: column;
+        margin: 1rem 0;
+    }
     
     &-left-side {
         flex: 1;
@@ -123,6 +128,11 @@ export default {
                     color: grey;
                     text-decoration: none;
                     font-size: 0.9rem;
+
+                    &:hover {
+                        color : rgba(255, 255, 255, 0.788);
+                        transition: 0.5s;
+                    }
                 }
 
             }

@@ -51,7 +51,7 @@ export default {
                 // scrub: true,
                 markers: false,
             },
-            x: -180,
+            x: -150,
             duration: 1.5,
         })
 
@@ -79,6 +79,11 @@ export default {
     flex-direction: row-reverse;
     gap: 3rem;
     min-height: 90vh;
+
+    @media(max-width : 1000px) {
+        flex-direction: column;
+        gap: 4rem;
+    }
 
     &-text {
         flex: 1;
@@ -131,6 +136,10 @@ export default {
         position: relative;
         bottom: -150px;
 
+        @media(max-width : 1000px) {
+             justify-content: end;   
+        }
+
         &-container {
             display: flex;
             justify-content: start;
@@ -139,6 +148,11 @@ export default {
             max-height: 500px;
             width: 100%;
             max-width: 500px;
+
+            @media(max-width : 1000px) {
+                max-height: 325px;
+                max-width: 325px;
+            }
 
             img {
                 width: 100%;

@@ -37,6 +37,22 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 800px) {
+        margin: 0;
+        padding: 0 1.5rem;
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        background: linear-gradient(110deg, rgb(18, 2, 34) 18%, rgb(34, 1, 71) 100%);
+        border: none;
+        z-index: 99999999;
+        border-bottom: 1px solid rgba(119, 0, 255, 0.432);
+    }
+
+    @media (max-width: 500px) {
+        padding: 0 0.5rem;      
+    }
 }
 
 .change-language {
@@ -44,6 +60,11 @@ header {
     top: 0.5rem;
     right: 1rem;
     cursor: pointer;
+
+    @media (max-width: 800px) {
+        top: 5.5rem;
+        right: 1rem;
+    }
 }
     
 </style>

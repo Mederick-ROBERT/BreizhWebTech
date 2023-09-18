@@ -51,7 +51,7 @@ export default {
                 // scrub: true,
                 markers: false,
             },
-            x: -180,
+            x: -150,
             duration: 1.5,
         })
 
@@ -79,6 +79,11 @@ export default {
     flex-direction: row-reverse;
     gap: 2rem;
     min-height: 90vh;
+
+    @media(max-width : 1000px) {
+        flex-direction: column;
+        gap: 4rem;
+    }
 
     &-text {
         flex: 1;
@@ -131,17 +136,27 @@ export default {
         position: relative;
         bottom: -150px;
 
+        @media(max-width : 1000px) {
+             justify-content: end;   
+        }
+
         &-container {
             display: flex;
-            justify-content: start;
+            justify-content: center;
             align-items: center;
-            padding-left: 5vw;
             height: 100%;
-            max-height: 480px;
             width: 100%;
+            max-height: 480px;
+            max-width: 500px;
+
+            @media(max-width : 1000px) {
+                max-height: 325px;
+                max-width: 325px;
+                width: 100%;
+            }
 
             img {
-                width: fit-content;
+                width: 100%;
                 height: fit-content;
                 border-radius: 0.5rem;
                 object-fit: contain;

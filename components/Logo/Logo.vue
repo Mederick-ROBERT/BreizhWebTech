@@ -37,9 +37,19 @@ export default {
     gap: .5rem;
     width: fit-content;
 
+    @media (max-width: 400px){
+        flex-direction: row-reverse;
+    }
+
     &-firstPart {
         height: fit-content;
         display: flex;
+
+        
+
+        @media (max-width: 350px){
+            font-size: 80%;
+        }
     }
 
     &-secondPart {
@@ -50,6 +60,15 @@ export default {
         width: 100%;
         height: 100%;
         object-fit: contain;
+
+        @media (max-width: 400px){
+            width: 80%;
+            height: 80%;
+        }
+
+        @media (max-width: 290px){
+            display: none;
+        }
     }
 }
 </style>

@@ -76,6 +76,22 @@ export default defineComponent ({
         flex-direction: row;
         gap: 1rem;
 
+        @media(max-width : 1000px) {
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 8rem;
+        }
+
+        @media(max-width: 1300px) {
+            gap: 2.5rem;
+        }
+
+        @media(max-width: 800px) {
+            margin-top: calc(v.$header--height + 5vh) ;
+            height: fit-content;
+            margin-bottom: 0;
+        }
+
             &-text {
                 flex: 1;
                 display: flex;
@@ -85,12 +101,30 @@ export default defineComponent ({
                 padding-right: 1rem;
                 padding-left: 1rem;
 
+                @media(max-width: 1300px) {
+                    max-width: 600px; 
+                }
+
+                @media(max-width: 1000px) {
+                    max-height: 280px; 
+                    justify-content: center;
+                }
+
+                @media(max-width : 500px) {
+                    max-height: 100%;
+                }
+
                 & .typewritter--text-contain {
                     display: flex;
                     align-items: baseline;
                     gap: 0.5rem;
                     font-variant: small-caps;
                     min-width: 720px;
+
+                    @media(max-width: 1300px) {
+                        min-width: 0;
+                        max-width: 600px;
+                    }
 
                     & p {
                         font-size: 1.8rem;
@@ -141,6 +175,10 @@ export default defineComponent ({
                 justify-content: center;
                 align-items: center;
 
+                @media(max-width : 1000px) {
+                    justify-content: end;
+                }
+
                 &-container {
                     width: 100%;
                     max-width: 550px;
@@ -149,6 +187,11 @@ export default defineComponent ({
                     display: flex;
                     justify-content: center;
                     align-items: center;
+
+                    @media(max-width : 1000px) {
+                        max-width: 400px;
+                        max-height: 400px;
+                    }
                     
                     & img {
                         width: 100%;
@@ -163,6 +206,10 @@ export default defineComponent ({
 
     &-corps {
         margin-top: 5rem;
+
+        @media(max-width : 500px) {
+            margin-top: 2rem;
+        }
     }
 }
 

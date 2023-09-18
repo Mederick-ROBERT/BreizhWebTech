@@ -28,5 +28,14 @@ const { language } = storeToRefs(store)
 </template>
 
 <style lang="scss">
+
+.home--corps {
+    @media(max-width : 1000px) {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
     
 </style>
