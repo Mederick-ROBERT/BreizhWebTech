@@ -36,6 +36,8 @@ const { language } = storeToRefs(store)
         flex-direction: column;
         gap: 2rem;
     }
+
+    overflow: hidden;
 }
     
 </style>

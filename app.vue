@@ -64,10 +64,6 @@ export default {
     box-sizing: border-box;
 }
 
-html {
-    overflow-x: hidden;
-}
-
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
