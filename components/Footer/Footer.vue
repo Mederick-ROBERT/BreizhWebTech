@@ -71,7 +71,7 @@ export default {
     border-top: 0.2px solid rgba(128, 128, 128, 0.5);
     padding: 1.5rem;
 
-    @media (max-width: 500px) {
+    @media (max-width: 1000px) {
         flex-direction: column;
         margin: 1rem 0;
     }
@@ -82,7 +82,24 @@ export default {
         flex-direction: column;
         justify-content: space-between;
 
+        @media (max-width: 1000px) {
+            flex-direction: row;
+            margin: 1rem 0;
+        }
+
+        @media(max-width : 600px) {
+            flex-direction: column;
+            margin: auto;
+            gap: 1.5rem;
+        }
+
         &-social-network {
+            display: flex;
+            align-items: center;
+
+            @media(max-width : 600px) {
+                margin: auto;
+            }
 
             &-link {
                 display: flex;
@@ -109,6 +126,16 @@ export default {
         display: flex;
         justify-content: space-evenly;
         gap: 1.5rem;
+
+        @media (max-width: 1150px) {
+            justify-content: end;
+        }
+
+        @media (max-width: 600px) {
+            flex-direction: column;
+            margin: auto;
+            margin-top: 2rem;
+        }
 
         &-single-container {
             display: flex;
